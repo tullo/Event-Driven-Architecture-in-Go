@@ -54,3 +54,13 @@ new versions
     postgres.SnapshotStore.Load
     postgres.SnapshotStore.Save
     ```
+
+CQRS changes
+- Read models called `MallRepository` and `CatalogRepository` were created
+- The application was updated to use the read models in the query handlers
+- The event handler signature was refactored to reduce boilerplate
+- Added support for adding middleware to AggregateStore
+- Used middleware to publish domain events
+
+Taking periodic snapshots of the event stream
+- Use snapshots to improve performance by reducing the number of events to load and process
