@@ -34,11 +34,6 @@ func (h CancelOrderHandler) CancelOrder(ctx context.Context, cmd CancelOrder) er
 		return err
 	}
 
-	// // TODO CH8 remove; handled in the saga
-	// if err = h.shopping.Cancel(ctx, order.ShoppingID); err != nil {
-	// 	return err
-	// }
-
 	if err = h.orders.Save(ctx, order); err != nil {
 		return err
 	}
