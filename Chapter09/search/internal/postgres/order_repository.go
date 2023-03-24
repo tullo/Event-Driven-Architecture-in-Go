@@ -30,14 +30,9 @@ func NewOrderRepository(tableName string, db postgres.DB) OrderRepository {
 }
 
 func (r OrderRepository) Add(ctx context.Context, order *models.Order) error {
-	const query = `INSERT INTO %s (
-order_id, customer_id, customer_name,
-items, status, product_ids, store_ids,
-created_at VALUES (
-$1, $2, $3,
-$4, $5, $6, $7
-$8
-)`
+	const query = `INSERT INTO %s (order_id, customer_id, customer_name, items,
+		status, product_ids, store_ids, created_at) 
+		VALUES ($1, $2, $3, $4, $5, $6, $7 $8)`
 	items, err := json.Marshal(order.Items)
 	if err != nil {
 		return err
@@ -50,7 +45,7 @@ $8
 		storeMap[item.StoreID] = struct{}{}
 	}
 	storeIDs := make(IDArray, 0, len(storeMap))
-	for storeID, _ := range storeMap {
+	for storeID := range storeMap {
 		storeIDs = append(storeIDs, storeID)
 	}
 
