@@ -24,7 +24,7 @@ require (
 	github.com/prometheus/client_golang v1.7.1
 	github.com/rdumont/assistdog v0.0.0-20201106100018-168b06230d14
 	github.com/rs/zerolog v1.28.0
-	github.com/stackus/dotenv v0.0.0-20220408232627-ce2f07a165d5
+	github.com/stackus/dotenv v0.0.0-20221206033122-02295762494b
 	github.com/stackus/errors v0.1.5
 	github.com/stretchr/testify v1.8.0
 	github.com/testcontainers/testcontainers-go v0.13.0
