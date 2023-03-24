@@ -98,12 +98,6 @@ type (
 )
 ```
 
-
-```log
-INF <-- Payments.Store.On(storesapi.StoreCreated)
-```
-
-
 ## Added module cosec
 
 Short for Create-Order-Saga-Execution-Coordinator
