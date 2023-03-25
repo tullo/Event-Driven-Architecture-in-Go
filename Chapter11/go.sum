@@ -964,6 +964,8 @@ github.com/spf13/viper v1.4.0/go.mod h1:PTJ7Z/lr49W6bUbkmS1V3by4uWynFiR9p7+dSq/y
 github.com/spf13/viper v1.7.0/go.mod h1:8WkrPz2fc9jxqZNCJI/76HCieCp4Q8HaLFoCha5qpdg=
 github.com/stackus/dotenv v0.0.0-20220408232627-ce2f07a165d5 h1:xK6Yrevnzb5aftLZKk8m2nlSXccfhesI55zXyFAmTXw=
 github.com/stackus/dotenv v0.0.0-20220408232627-ce2f07a165d5/go.mod h1:+zTLFeTOJkiI6favYN9c9q2u9/kGbV57iIPbgkLVWrU=
+github.com/stackus/dotenv v0.0.0-20221206033122-02295762494b h1:/3yHnKZ62k34OrQVScJCZM2qax7khmkAHwT/5lrlHUU=
+github.com/stackus/dotenv v0.0.0-20221206033122-02295762494b/go.mod h1:+zTLFeTOJkiI6favYN9c9q2u9/kGbV57iIPbgkLVWrU=
 github.com/stackus/errors v0.1.5 h1:YYEPJcA4xeSL6x0ph4IMKpCbdXgchgrchf9Y1nCoeow=
 github.com/stackus/errors v0.1.5/go.mod h1:STqk7YsxsPwkoFmz2Q7/VuskeyPhqUi+mCGm9hYRxOM=
 github.com/stefanberger/go-pkcs11uri v0.0.0-20201008174630-78d3cae3a980/go.mod h1:AO3tvPzVZ/ayst6UlUKUv6rcPQInYe3IknH3jYhAKu8=

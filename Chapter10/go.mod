@@ -21,7 +21,7 @@ require (
 	github.com/pact-foundation/pact-go/v2 v2.0.0-beta.14
 	github.com/pressly/goose/v3 v3.7.0
 	github.com/rs/zerolog v1.28.0
-	github.com/stackus/dotenv v0.0.0-20220408232627-ce2f07a165d5
+	github.com/stackus/dotenv v0.0.0-20221206033122-02295762494b
 	github.com/stackus/errors v0.1.5
 	github.com/stretchr/testify v1.8.0
 	github.com/testcontainers/testcontainers-go v0.13.0
