@@ -17,9 +17,9 @@ services:
       - postgres
     command: [ "./wait-for", "postgres:5432", "--", "/mallbots/monolith" ]
   postgres:
+    image: postgres:15.2-alpine
     container_name: postgres
     hostname: postgres
-    image: postgres:12-alpine
     restart: always
     environment:
       POSTGRES_PASSWORD: itsasecret
@@ -57,6 +57,16 @@ services:
       PACT_BROKER_BASE_URL: 'http://localhost:9292 http://pact-broker:9292'
     profiles:
       - testing
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: foobarbaz
+    ports:
+      - '9090:80'
+    restart: unless-stopped
+
 volumes:
   pgdata:
   jsdata:
