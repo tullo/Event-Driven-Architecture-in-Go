@@ -9,9 +9,12 @@ COPY go.* ./
 RUN go mod download
 
 # Copy local code to the container image.
-COPY .. ./
+COPY . ./
 
 # Build the binary.
+# go tool link 2>&1 | grep disable
+#  -s	disable symbol table
+#  -w	disable DWARF generation
 RUN go build -ldflags="-s -w" -v -o monolith ./cmd/mallbots
 
 FROM alpine:latest AS runtime

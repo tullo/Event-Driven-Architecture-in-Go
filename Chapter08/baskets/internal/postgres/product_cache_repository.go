@@ -69,13 +69,13 @@ func (r ProductCacheRepository) Remove(ctx context.Context, productID string) er
 }
 
 func (r ProductCacheRepository) Find(ctx context.Context, productID string) (*domain.Product, error) {
-	const query = `SELECT store_id, name, price FROM %s WHERE id = $1 LIMIT 1`
+	const query = `SELECT store_id, name FROM %s WHERE id = $1 LIMIT 1`
 
 	product := &domain.Product{
 		ID: productID,
 	}
 
-	err := r.db.QueryRowContext(ctx, r.table(query), productID).Scan(&product.StoreID, &product.Name, &product.Price)
+	err := r.db.QueryRowContext(ctx, r.table(query), productID).Scan(&product.StoreID, &product.Name)
 	if err != nil {
 		if !errors.Is(err, sql.ErrNoRows) {
 			return nil, errors.Wrap(err, "scanning product")
