@@ -31,4 +31,6 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "mallbots" <<-EOSQL
      END IF;
   END;
   \$\$ language 'plpgsql';
+
+  GRANT CREATE ON SCHEMA public TO mallbots_user;
 EOSQL
