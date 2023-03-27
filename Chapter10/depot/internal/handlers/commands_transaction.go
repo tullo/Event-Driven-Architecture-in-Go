@@ -29,7 +29,7 @@ func RegisterCommandHandlersTx(container di.Container) error {
 				di.Get(ctx, "registry").(registry.Registry),
 				di.Get(ctx, "replyStream").(am.ReplyStream),
 				di.Get(ctx, "commandHandlers").(ddd.CommandHandler[ddd.Command]),
-			).(am.RawMessageHandler),
+			),
 			di.Get(ctx, "inboxMiddleware").(am.RawMessageHandlerMiddleware),
 		)
 
