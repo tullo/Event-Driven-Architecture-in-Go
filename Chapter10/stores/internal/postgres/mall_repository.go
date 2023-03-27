@@ -73,10 +73,7 @@ func (r MallRepository) All(ctx context.Context) (stores []*domain.MallStore, er
 		return nil, errors.Wrap(err, "querying stores")
 	}
 	defer func(rows *sql.Rows) {
-		err := rows.Close()
-		if err != nil {
-			err = errors.Wrap(err, "closing store rows")
-		}
+		rows.Close()
 	}(rows)
 
 	for rows.Next() {
@@ -105,10 +102,7 @@ func (r MallRepository) AllParticipating(ctx context.Context) (stores []*domain.
 		return nil, errors.Wrap(err, "querying participating stores")
 	}
 	defer func(rows *sql.Rows) {
-		err := rows.Close()
-		if err != nil {
-			err = errors.Wrap(err, "closing participating store rows")
-		}
+		rows.Close()
 	}(rows)
 
 	for rows.Next() {

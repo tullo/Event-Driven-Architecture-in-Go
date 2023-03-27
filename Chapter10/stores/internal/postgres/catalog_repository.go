@@ -72,21 +72,19 @@ func (r CatalogRepository) Find(ctx context.Context, productID string) (*domain.
 	return product, nil
 }
 
-func (r CatalogRepository) GetCatalog(ctx context.Context, storeID string) (products []*domain.CatalogProduct, err error) {
+func (r CatalogRepository) GetCatalog(ctx context.Context, storeID string) ([]*domain.CatalogProduct, error) {
 	const query = `SELECT id, name, description, sku, price FROM %s WHERE store_id = $1`
 
 	var rows *sql.Rows
-	rows, err = r.db.QueryContext(ctx, r.table(query), storeID)
+	rows, err := r.db.QueryContext(ctx, r.table(query), storeID)
 	if err != nil {
 		return nil, errors.Wrap(err, "querying products")
 	}
 	defer func(rows *sql.Rows) {
-		err := rows.Close()
-		if err != nil {
-			err = errors.Wrap(err, "closing product rows")
-		}
+		rows.Close()
 	}(rows)
 
+	var products []*domain.CatalogProduct
 	for rows.Next() {
 		product := &domain.CatalogProduct{
 			StoreID: storeID,
