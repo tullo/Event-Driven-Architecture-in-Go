@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/pact-foundation/pact-go/v2/matchers"
-	"github.com/pact-foundation/pact-go/v2/message/v4"
+	v4 "github.com/pact-foundation/pact-go/v2/message/v4"
 	"github.com/pact-foundation/pact-go/v2/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -90,8 +90,8 @@ func TestStoresConsumer(t *testing.T) {
 				tc.on(m)
 			}
 			handlers := NewIntegrationEventHandlers(m.stores, m.products)
-			msgHandlerFn := func(contents v4.MessageContents) error {
-				event := contents.Content.(*rawEvent)
+			msgHandlerFn := func(contents v4.AsynchronousMessage) error {
+				event := contents.Body.(*rawEvent)
 
 				data, err := json.Marshal(event.Payload)
 				if err != nil {
