@@ -5,11 +5,10 @@ package postgres
 import (
 	"context"
 	"database/sql"
+	"eda-in-golang/baskets/internal/domain"
+	"eda-in-golang/internal/logger/log"
+	"eda-in-golang/migrations"
 	"fmt"
-	"path/filepath"
-	"testing"
-	"time"
-
 	"github.com/docker/go-connections/nat"
 	_ "github.com/jackc/pgx/v4/stdlib"
 	"github.com/pressly/goose/v3"
@@ -17,10 +16,8 @@ import (
 	"github.com/stretchr/testify/suite"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
-
-	"eda-in-golang/baskets/internal/domain"
-	"eda-in-golang/internal/logger/log"
-	"eda-in-golang/migrations"
+	"path/filepath"
+	"testing"
 )
 
 type productCacheSuite struct {
@@ -46,7 +43,7 @@ func (s *productCacheSuite) SetupSuite() {
 	if err != nil {
 		s.T().Fatal(err)
 	}
-	const dbUrl = "postgres://mallbots_user:mallbots_pass@localhost:%s/mallbots?sslmode=disable"
+	const dbUrl = "postgres://mallbots_user:mallbots_pass@%s:%s/mallbots?sslmode=disable"
 	s.container, err = testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
 		ContainerRequest: testcontainers.ContainerRequest{
 			Image:        "postgres:12-alpine",
@@ -58,9 +55,9 @@ func (s *productCacheSuite) SetupSuite() {
 			Mounts: []testcontainers.ContainerMount{
 				testcontainers.BindMount(initDir, "/docker-entrypoint-initdb.d"),
 			},
-			WaitingFor: wait.ForSQL("5432/tcp", "pgx", func(port nat.Port) string {
-				return fmt.Sprintf(dbUrl, port.Port())
-			}).Timeout(5 * time.Second),
+			WaitingFor: wait.ForSQL("5432/tcp", "pgx", func(host string, port nat.Port) string {
+				return fmt.Sprintf(dbUrl, host, port.Port())
+			}),
 		},
 		Started: true,
 	})
