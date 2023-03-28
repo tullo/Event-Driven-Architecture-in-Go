@@ -38,20 +38,18 @@ func TestStoresProducer(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	verifier := message.Verifier{}
-	err = verifier.Verify(t, message.VerifyMessageRequest{
-		VerifyRequest: provider.VerifyRequest{
-			Provider:                   "stores-pub",
-			ProviderVersion:            "1.0.0",
-			BrokerURL:                  "http://127.0.0.1:9292",
-			BrokerUsername:             "pactuser",
-			BrokerPassword:             "pactpass",
-			PublishVerificationResults: true,
-			AfterEach: func() error {
-				stores.Reset()
-				products.Reset()
-				return nil
-			},
+	verifier := provider.NewVerifier()
+	err = verifier.VerifyProvider(t, provider.VerifyRequest{
+		Provider:                   "stores-pub",
+		ProviderVersion:            "1.0.0",
+		BrokerURL:                  "http://127.0.0.1:9292",
+		BrokerUsername:             "pactuser",
+		BrokerPassword:             "pactpass",
+		PublishVerificationResults: true,
+		AfterEach: func() error {
+			stores.Reset()
+			products.Reset()
+			return nil
 		},
 		MessageHandlers: map[string]message.Handler{
 			"a StoreCreated message": func(states []models.ProviderState) (message.Body, message.Metadata, error) {
