@@ -12,12 +12,6 @@ type stream struct {
 
 var _ am.RawMessageStream = (*stream)(nil)
 
-func NewStream() stream {
-	return stream{
-		subscriptions: make(map[string][]am.RawMessageHandler),
-	}
-}
-
 func (t stream) Publish(ctx context.Context, topicName string, v am.RawMessage) error {
 	for _, handler := range t.subscriptions[topicName] {
 		err := handler.HandleMessage(ctx, &rawMessage{v})
@@ -28,7 +22,7 @@ func (t stream) Publish(ctx context.Context, topicName string, v am.RawMessage) 
 	return nil
 }
 
-func (t stream) Subscribe(topicName string, handler am.RawMessageHandler, options ...am.SubscriberOption) error {
+func (t stream) Subscribe(topicName string, handler am.RawMessageHandler, options ...am.SubscriberOption) (am.Subscription, error) {
 	cfg := am.NewSubscriberConfig(options)
 
 	var filters map[string]struct{}
@@ -51,5 +45,9 @@ func (t stream) Subscribe(topicName string, handler am.RawMessageHandler, option
 
 	t.subscriptions[topicName] = append(t.subscriptions[topicName], fn)
 
-	return nil
+	return t.Subscribe(topicName, fn, options...)
+}
+
+func (t stream) Unsubscribe() error {
+	return t.Unsubscribe()
 }
