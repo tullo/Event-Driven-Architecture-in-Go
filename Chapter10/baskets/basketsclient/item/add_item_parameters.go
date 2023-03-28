@@ -54,10 +54,12 @@ func NewAddItemParamsWithHTTPClient(client *http.Client) *AddItemParams {
 	}
 }
 
-/* AddItemParams contains all the parameters to send to the API endpoint
-   for the add item operation.
+/*
+AddItemParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the add item operation.
+
+	Typically these are written to a http.Request.
 */
 type AddItemParams struct {
 

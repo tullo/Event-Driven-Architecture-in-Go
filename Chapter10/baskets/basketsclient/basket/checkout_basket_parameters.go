@@ -54,10 +54,12 @@ func NewCheckoutBasketParamsWithHTTPClient(client *http.Client) *CheckoutBasketP
 	}
 }
 
-/* CheckoutBasketParams contains all the parameters to send to the API endpoint
-   for the checkout basket operation.
+/*
+CheckoutBasketParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the checkout basket operation.
+
+	Typically these are written to a http.Request.
 */
 type CheckoutBasketParams struct {
 

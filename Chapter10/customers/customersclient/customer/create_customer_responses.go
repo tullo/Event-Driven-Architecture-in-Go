@@ -46,7 +46,8 @@ func NewCreateCustomerOK() *CreateCustomerOK {
 	return &CreateCustomerOK{}
 }
 
-/* CreateCustomerOK describes a response with status code 200, with default header values.
+/*
+CreateCustomerOK describes a response with status code 200, with default header values.
 
 A successful response.
 */
@@ -54,9 +55,44 @@ type CreateCustomerOK struct {
 	Payload *models.CustomerspbRegisterCustomerResponse
 }
 
+// IsSuccess returns true when this create customer o k response has a 2xx status code
+func (o *CreateCustomerOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create customer o k response has a 3xx status code
+func (o *CreateCustomerOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create customer o k response has a 4xx status code
+func (o *CreateCustomerOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create customer o k response has a 5xx status code
+func (o *CreateCustomerOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create customer o k response a status code equal to that given
+func (o *CreateCustomerOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the create customer o k response
+func (o *CreateCustomerOK) Code() int {
+	return 200
+}
+
 func (o *CreateCustomerOK) Error() string {
 	return fmt.Sprintf("[POST /api/customers][%d] createCustomerOK  %+v", 200, o.Payload)
 }
+
+func (o *CreateCustomerOK) String() string {
+	return fmt.Sprintf("[POST /api/customers][%d] createCustomerOK  %+v", 200, o.Payload)
+}
+
 func (o *CreateCustomerOK) GetPayload() *models.CustomerspbRegisterCustomerResponse {
 	return o.Payload
 }
@@ -80,7 +116,8 @@ func NewCreateCustomerDefault(code int) *CreateCustomerDefault {
 	}
 }
 
-/* CreateCustomerDefault describes a response with status code -1, with default header values.
+/*
+CreateCustomerDefault describes a response with status code -1, with default header values.
 
 An unexpected error response.
 */
@@ -88,6 +125,31 @@ type CreateCustomerDefault struct {
 	_statusCode int
 
 	Payload *models.RPCStatus
+}
+
+// IsSuccess returns true when this create customer default response has a 2xx status code
+func (o *CreateCustomerDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this create customer default response has a 3xx status code
+func (o *CreateCustomerDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this create customer default response has a 4xx status code
+func (o *CreateCustomerDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this create customer default response has a 5xx status code
+func (o *CreateCustomerDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this create customer default response a status code equal to that given
+func (o *CreateCustomerDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the create customer default response
@@ -98,6 +160,11 @@ func (o *CreateCustomerDefault) Code() int {
 func (o *CreateCustomerDefault) Error() string {
 	return fmt.Sprintf("[POST /api/customers][%d] createCustomer default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CreateCustomerDefault) String() string {
+	return fmt.Sprintf("[POST /api/customers][%d] createCustomer default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CreateCustomerDefault) GetPayload() *models.RPCStatus {
 	return o.Payload
 }

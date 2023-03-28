@@ -46,7 +46,7 @@ type ClientService interface {
 }
 
 /*
-  AddProduct adds a store product
+AddProduct adds a store product
 */
 func (a *Client) AddProduct(params *AddProductParams, opts ...ClientOption) (*AddProductOK, error) {
 	// TODO: Validate the params before sending
@@ -83,7 +83,7 @@ func (a *Client) AddProduct(params *AddProductParams, opts ...ClientOption) (*Ad
 }
 
 /*
-  DecreaseProductPrice decreases the price of a product
+DecreaseProductPrice decreases the price of a product
 */
 func (a *Client) DecreaseProductPrice(params *DecreaseProductPriceParams, opts ...ClientOption) (*DecreaseProductPriceOK, error) {
 	// TODO: Validate the params before sending
@@ -120,7 +120,7 @@ func (a *Client) DecreaseProductPrice(params *DecreaseProductPriceParams, opts .
 }
 
 /*
-  GetProduct gets a store product
+GetProduct gets a store product
 */
 func (a *Client) GetProduct(params *GetProductParams, opts ...ClientOption) (*GetProductOK, error) {
 	// TODO: Validate the params before sending
@@ -157,7 +157,7 @@ func (a *Client) GetProduct(params *GetProductParams, opts ...ClientOption) (*Ge
 }
 
 /*
-  GetStoreProduct gets a list of store products
+GetStoreProduct gets a list of store products
 */
 func (a *Client) GetStoreProduct(params *GetStoreProductParams, opts ...ClientOption) (*GetStoreProductOK, error) {
 	// TODO: Validate the params before sending
@@ -194,7 +194,7 @@ func (a *Client) GetStoreProduct(params *GetStoreProductParams, opts ...ClientOp
 }
 
 /*
-  IncreaseProductPrice increases the price of a product
+IncreaseProductPrice increases the price of a product
 */
 func (a *Client) IncreaseProductPrice(params *IncreaseProductPriceParams, opts ...ClientOption) (*IncreaseProductPriceOK, error) {
 	// TODO: Validate the params before sending
@@ -231,7 +231,7 @@ func (a *Client) IncreaseProductPrice(params *IncreaseProductPriceParams, opts .
 }
 
 /*
-  RebrandProduct changes the name and description of a product
+RebrandProduct changes the name and description of a product
 */
 func (a *Client) RebrandProduct(params *RebrandProductParams, opts ...ClientOption) (*RebrandProductOK, error) {
 	// TODO: Validate the params before sending
@@ -268,7 +268,7 @@ func (a *Client) RebrandProduct(params *RebrandProductParams, opts ...ClientOpti
 }
 
 /*
-  RemoveProduct removes a store product
+RemoveProduct removes a store product
 */
 func (a *Client) RemoveProduct(params *RemoveProductParams, opts ...ClientOption) (*RemoveProductOK, error) {
 	// TODO: Validate the params before sending

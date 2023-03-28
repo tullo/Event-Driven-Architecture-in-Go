@@ -54,10 +54,12 @@ func NewRebrandStoreParamsWithHTTPClient(client *http.Client) *RebrandStoreParam
 	}
 }
 
-/* RebrandStoreParams contains all the parameters to send to the API endpoint
-   for the rebrand store operation.
+/*
+RebrandStoreParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the rebrand store operation.
+
+	Typically these are written to a http.Request.
 */
 type RebrandStoreParams struct {
 

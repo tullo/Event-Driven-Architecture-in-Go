@@ -52,10 +52,12 @@ func NewDisableCustomerParamsWithHTTPClient(client *http.Client) *DisableCustome
 	}
 }
 
-/* DisableCustomerParams contains all the parameters to send to the API endpoint
-   for the disable customer operation.
+/*
+DisableCustomerParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the disable customer operation.
+
+	Typically these are written to a http.Request.
 */
 type DisableCustomerParams struct {
 

@@ -52,10 +52,12 @@ func NewEnableCustomerParamsWithHTTPClient(client *http.Client) *EnableCustomerP
 	}
 }
 
-/* EnableCustomerParams contains all the parameters to send to the API endpoint
-   for the enable customer operation.
+/*
+EnableCustomerParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the enable customer operation.
+
+	Typically these are written to a http.Request.
 */
 type EnableCustomerParams struct {
 

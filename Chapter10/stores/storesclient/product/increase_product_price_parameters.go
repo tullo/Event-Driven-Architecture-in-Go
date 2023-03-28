@@ -54,10 +54,12 @@ func NewIncreaseProductPriceParamsWithHTTPClient(client *http.Client) *IncreaseP
 	}
 }
 
-/* IncreaseProductPriceParams contains all the parameters to send to the API endpoint
-   for the increase product price operation.
+/*
+IncreaseProductPriceParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the increase product price operation.
+
+	Typically these are written to a http.Request.
 */
 type IncreaseProductPriceParams struct {
 

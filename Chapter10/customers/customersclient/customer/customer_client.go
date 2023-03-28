@@ -42,7 +42,7 @@ type ClientService interface {
 }
 
 /*
-  DisableCustomer disables a customer
+DisableCustomer disables a customer
 */
 func (a *Client) DisableCustomer(params *DisableCustomerParams, opts ...ClientOption) (*DisableCustomerOK, error) {
 	// TODO: Validate the params before sending
@@ -79,7 +79,7 @@ func (a *Client) DisableCustomer(params *DisableCustomerParams, opts ...ClientOp
 }
 
 /*
-  ChangeSmsNumber changes a customers s m s number
+ChangeSmsNumber changes a customers s m s number
 */
 func (a *Client) ChangeSmsNumber(params *ChangeSmsNumberParams, opts ...ClientOption) (*ChangeSmsNumberOK, error) {
 	// TODO: Validate the params before sending
@@ -116,7 +116,7 @@ func (a *Client) ChangeSmsNumber(params *ChangeSmsNumberParams, opts ...ClientOp
 }
 
 /*
-  CreateCustomer creates a new customer
+CreateCustomer creates a new customer
 */
 func (a *Client) CreateCustomer(params *CreateCustomerParams, opts ...ClientOption) (*CreateCustomerOK, error) {
 	// TODO: Validate the params before sending
@@ -153,7 +153,7 @@ func (a *Client) CreateCustomer(params *CreateCustomerParams, opts ...ClientOpti
 }
 
 /*
-  EnableCustomer enables a customer
+EnableCustomer enables a customer
 */
 func (a *Client) EnableCustomer(params *EnableCustomerParams, opts ...ClientOption) (*EnableCustomerOK, error) {
 	// TODO: Validate the params before sending
@@ -190,7 +190,7 @@ func (a *Client) EnableCustomer(params *EnableCustomerParams, opts ...ClientOpti
 }
 
 /*
-  GetCustomer gets a customer
+GetCustomer gets a customer
 */
 func (a *Client) GetCustomer(params *GetCustomerParams, opts ...ClientOption) (*GetCustomerOK, error) {
 	// TODO: Validate the params before sending

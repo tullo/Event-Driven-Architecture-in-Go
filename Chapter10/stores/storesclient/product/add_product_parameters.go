@@ -54,10 +54,12 @@ func NewAddProductParamsWithHTTPClient(client *http.Client) *AddProductParams {
 	}
 }
 
-/* AddProductParams contains all the parameters to send to the API endpoint
-   for the add product operation.
+/*
+AddProductParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the add product operation.
+
+	Typically these are written to a http.Request.
 */
 type AddProductParams struct {
 
