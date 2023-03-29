@@ -1,6 +1,5 @@
-ARG service
 FROM golang:1.18-alpine AS builder
-ARG service
+ARG svc
 
 WORKDIR /mallbots
 
@@ -17,7 +16,7 @@ COPY . ./
 # go tool link 2>&1 | grep disable
 #  -s	disable symbol table
 #  -w	disable DWARF generation
-RUN go build -ldflags="-s -w" -v -o service ./${service}/cmd/service
+RUN go build -ldflags="-s -w" -v -o service ./${svc}/cmd/service
 
 FROM alpine:3 AS runtime
 
