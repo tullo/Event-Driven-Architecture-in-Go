@@ -1,2 +1,4 @@
 node_modules
 pact.log
+.terraform/
+.terraform.lock.hcl
