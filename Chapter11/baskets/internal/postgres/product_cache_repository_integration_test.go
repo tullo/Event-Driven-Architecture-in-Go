@@ -49,7 +49,7 @@ func (s *productCacheSuite) SetupSuite() {
 	const dbUrl = "postgres://mallbots_user:mallbots_pass@localhost:%s/mallbots?sslmode=disable"
 	s.container, err = testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
 		ContainerRequest: testcontainers.ContainerRequest{
-			Image:        "postgres:12-alpine",
+			Image:        "postgres:15.2-alpine",
 			Hostname:     "postgres",
 			ExposedPorts: []string{"5432/tcp"},
 			Env: map[string]string{
