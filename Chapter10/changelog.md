@@ -1,8 +1,8 @@
 # changelog
 
 Testing strategy:
-- Unit tests
-- Integration tests
+- [Unit](#unit-tests) tests
+- [Integration](#integration-tests) tests
 - Contract tests
 - End-to-end tests
 
