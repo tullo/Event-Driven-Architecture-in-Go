@@ -158,7 +158,10 @@ Providers may make a breaking change and will need to cooperate with the affecte
     - new: can test both HTTP and Message Based interactions
   - docker: https://hub.docker.com/r/pactfoundation/pact-cli
   - executable: https://github.com/pact-foundation/pact_broker-client/releases
-
+- Pact Go workshop
+  - https://github.com/pact-foundation/pact-workshop-go
+- Testing Microservices - Contract Tests
+  - https://softwaremill.com/testing-microservices-contract-tests/
 
 ## E2E - End-to-end tests
 
