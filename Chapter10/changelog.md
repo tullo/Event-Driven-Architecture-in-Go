@@ -4,7 +4,7 @@ Testing strategy:
 - [Unit](#unit-tests) tests
 - [Integration](#integration-tests) tests
 - [Contract](#contract-tests) tests
-- [End-to-end](e2e---end-to-end-tests) tests
+- [End-to-end](#e2e---end-to-end-tests) tests (e2e)
 
 At each level of testing, we use the term system under test (SUT) to describe the component or components being tested.
 
