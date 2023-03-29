@@ -8,3 +8,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
 
   GRANT CREATE, CONNECT ON DATABASE pactdb TO pactuser;
 EOSQL
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "pactdb" <<-EOSQL
+  GRANT CREATE ON SCHEMA public TO pactuser;
+EOSQL
