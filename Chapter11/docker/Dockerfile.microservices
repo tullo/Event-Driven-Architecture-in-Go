@@ -11,18 +11,17 @@ COPY go.* ./
 RUN go mod download
 
 # Copy local code to the container image.
-COPY .. ./
+COPY . ./
 
 # Build the binary.
-RUN go build -ldflags="-s -w" -v -o service \
-    ./${service}/cmd/service
+# go tool link 2>&1 | grep disable
+#  -s	disable symbol table
+#  -w	disable DWARF generation
+RUN go build -ldflags="-s -w" -v -o service ./${service}/cmd/service
 
 FROM alpine:3 AS runtime
 
-COPY --from=builder /mallbots/docker/wait-for .
-RUN chmod +x /wait-for
-
-# Copy the binary to the production image from the builder stage.
-COPY --from=builder /mallbots/service /mallbots/service
+COPY --from=builder --chmod=0755 /mallbots/docker/wait-for .
+COPY --from=builder --chmod=0755 /mallbots/service /mallbots/service
 
 CMD ["/mallbots/service"]
