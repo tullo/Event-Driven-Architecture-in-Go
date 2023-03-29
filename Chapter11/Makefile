@@ -29,13 +29,13 @@ build-monolith:
 	docker build -t mallbots-monolith --file docker/Dockerfile .
 
 build-services:
-	docker build -t mallbots-baskets --file docker/Dockerfile.microservices --build-arg=service=baskets .
-	docker build -t mallbots-cosec --file docker/Dockerfile.microservices --build-arg=service=cosec .
-	docker build -t mallbots-customers --file docker/Dockerfile.microservices --build-arg=service=customers .
-	docker build -t mallbots-depot --file docker/Dockerfile.microservices --build-arg=service=depot .
-	docker build -t mallbots-notifications --file docker/Dockerfile.microservices --build-arg=service=notifications .
-	docker build -t mallbots-ordering --file docker/Dockerfile.microservices --build-arg=service=ordering .
-	docker build -t mallbots-payments --file docker/Dockerfile.microservices --build-arg=service=payments .
-	docker build -t mallbots-search --file docker/Dockerfile.microservices --build-arg=service=search .
-	docker build -t mallbots-stores --file docker/Dockerfile.microservices --build-arg=service=stores .
+	docker build -t mallbots-baskets --file docker/Dockerfile.microservices --build-arg=svc=baskets .
+	docker build -t mallbots-cosec --file docker/Dockerfile.microservices --build-arg=svc=cosec .
+	docker build -t mallbots-customers --file docker/Dockerfile.microservices --build-arg=svc=customers .
+	docker build -t mallbots-depot --file docker/Dockerfile.microservices --build-arg=svc=depot .
+	docker build -t mallbots-notifications --file docker/Dockerfile.microservices --build-arg=svc=notifications .
+	docker build -t mallbots-ordering --file docker/Dockerfile.microservices --build-arg=svc=ordering .
+	docker build -t mallbots-payments --file docker/Dockerfile.microservices --build-arg=svc=payments .
+	docker build -t mallbots-search --file docker/Dockerfile.microservices --build-arg=svc=search .
+	docker build -t mallbots-stores --file docker/Dockerfile.microservices --build-arg=svc=stores .
 

@@ -33,7 +33,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.microservices
       args:
-        service: baskets
+        svc: baskets
     expose:
       - '9000'
     environment:
@@ -54,7 +54,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.microservices
       args:
-        service: cosec
+        svc: cosec
     expose:
       - '9000'
     environment:
@@ -76,7 +76,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.microservices
       args:
-        service: customers
+        svc: customers
     expose:
       - '9000'
     environment:
@@ -98,7 +98,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.microservices
       args:
-        service: depot
+        svc: depot
     expose:
       - '9000'
     environment:
@@ -120,7 +120,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.microservices
       args:
-        service: notifications
+        svc: notifications
     expose:
       - '9000'
     environment:
@@ -142,7 +142,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.microservices
       args:
-        service: ordering
+        svc: ordering
     expose:
       - '9000'
     environment:
@@ -164,7 +164,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.microservices
       args:
-        service: payments
+        svc: payments
     expose:
       - '9000'
     environment:
@@ -186,7 +186,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.microservices
       args:
-        service: search
+        svc: search
     expose:
       - '9000'
     environment:
@@ -208,7 +208,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.microservices
       args:
-        service: stores
+        svc: stores
     expose:
       - '9000'
     environment:

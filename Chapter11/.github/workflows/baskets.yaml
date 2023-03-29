@@ -41,5 +41,5 @@ jobs:
           GITHUB_SHA: ${{ github.sha }}
           DOCKERFILE: docker/Dockerfile.microservices
         run: |
-          docker build -t $REGISTRY/$SERVICE:$GITHUB_SHA -t $REGISTRY/$SERVICE:latest --file $DOCKERFILE --build-arg=service=$SERVICE .
+          docker build -t $REGISTRY/$SERVICE:$GITHUB_SHA -t $REGISTRY/$SERVICE:latest --file $DOCKERFILE --build-arg=svc=$SERVICE .
           docker push $REGISTRY/$SERVICE
