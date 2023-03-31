@@ -4,13 +4,13 @@ variable eks_node_instance_types {
   default     = ["t3.small"]
 }
 
-// https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/18.29.0
+// https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/19.11.0
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "~> 18.29.0"
+  version = "~> 19.11.0"
 
   cluster_name    = var.project
-  cluster_version = "1.22"
+  cluster_version = "1.25"
 
   cluster_endpoint_private_access       = true
   cluster_endpoint_public_access        = true
@@ -54,10 +54,10 @@ module "eks" {
   }
 }
 
-// https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/5.3.1/submodules/iam-role-for-service-accounts-eks
+// https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/5.16.0/submodules/iam-role-for-service-accounts-eks
 module "vpc_cni_irsa" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
-  version = "~> 5.4.0"
+  version = "~> 5.16.0"
 
   role_name_prefix                       = "vpc-cni-irsa-"
   attach_load_balancer_controller_policy = true

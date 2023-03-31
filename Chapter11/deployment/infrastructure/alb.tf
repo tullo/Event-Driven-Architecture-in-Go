@@ -1,7 +1,7 @@
 variable lb_image_repository {
   description = "AWS Load Balancer image host See: https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
   type        = string
-  default     = "602401143452.dkr.ecr.us-east-1.amazonaws.com"
+  default     = "602401143452.dkr.ecr.eu-north-1.amazonaws.com"
 }
 
 variable lb_service_account_name {

@@ -2,3 +2,6 @@ node_modules
 pact.log
 .terraform/
 .terraform.lock.hcl
+Chapter11/deployment/infrastructure/infrastructure.tfstate.backup
+Chapter11/deployment/infrastructure/infrastructure.tfstate
+Chapter11/deployment/infrastructure/infra.tfplan
