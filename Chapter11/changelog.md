@@ -1,5 +1,11 @@
 # changelog
 
+- Added nginx as reverse proxy to the compose environment.
+- Added env `RPC_SERVICES: 'STORES=stores:9000,CUSTOMERS=customers:9000'`
+  - `func (c RpcConfig) Service(service string) string`
+  - `func (s *Services) Decode(v string) error`
+
+
 `docker compose --profile microservices up`
 
 `go test -v ./testing/e2e/*.go`
