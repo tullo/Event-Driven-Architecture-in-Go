@@ -1,5 +1,7 @@
 #!/bin/bash
+# enable shell option (set)
 shopt -s expand_aliases
+# shopt | grep expand_aliases
 alias deploytools='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.mallbots:/root deploytools'
 
 deploytools git config --global --add safe.directory /mallbots/deployment/.current/.terraform/modules/db
