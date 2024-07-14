@@ -1,6 +1,6 @@
 module eda-in-golang
 
-go 1.18
+go 1.22
 
 require (
 	github.com/cucumber/godog v0.12.6
